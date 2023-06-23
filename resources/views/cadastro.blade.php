@@ -7,7 +7,7 @@
 @section('main')
     <h2>Cadastro</h2>
     <section>
-        <form action="" method="get">
+        <form action="" method="post">
             <label for="user">Nome de Usuário</label>
             <input type="text" name="user">
 

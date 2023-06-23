@@ -14,9 +14,24 @@ class UserController extends Controller
     {
         return view('cadastro');
     }
-
-    public function home()
+    public function master()
     {
-        return view('home');
+        return view('master');
+    }
+    public function validarLogin()
+    {
+        return view('master');
+    }
+        public function pagamento()
+    {
+        return view('pagamento');
+    }
+        public function extrato()
+    {
+        return view('extrato');
+    }
+        public function transferencia()
+    {
+        return view('transferencia');
     }
 }

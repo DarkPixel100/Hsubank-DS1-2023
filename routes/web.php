@@ -13,6 +13,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [UserController::class, 'home']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/', [UserController::class, 'login']);
 Route::get('/cadastro', [UserController::class, 'cadastro']);
+Route::get('/login', [UserController::class, 'login']);
+Route::post('master/', [UserController::class, 'validarLogin']);
+Route::get('/master', [UserController::class, 'master']);
+Route::get('pagamento/', [UserController::class, 'pagamento']);
+Route::get('extrato/', [UserController::class, 'extrato']);
+Route::get('transferencia/', [UserController::class, 'transferencia']);

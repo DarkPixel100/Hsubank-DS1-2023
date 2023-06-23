@@ -7,7 +7,8 @@
 @section('main')
     <h2>Login</h2>
     <section>
-        <form action="" method="get">
+        <form action="{{url("master/")}}" method="post">
+            @csrf
             <label for="user">Nome de Usuário</label>
             <input type="text" name="user">
 
