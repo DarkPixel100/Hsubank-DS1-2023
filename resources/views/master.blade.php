@@ -7,14 +7,15 @@ Home
 @section ('main')
     <h2>Conta Bancária</h2>
     <div>
-    <div>
-        <a href={{url("/pagamento")}}>Fazer Pagamentos</a>
-    </div>
-    <div>
-        <a href={{url("/transferencia")}}>Transferencias</a>
-    </div>
-    <div>
-        <a href={{url("/extrato")}}>Ver Extratos</a>
-    </div>
+        <div>Saldo:  </div>
+        <div>
+            <a href={{url("/pagamento")}}>Pagamentos</a>
+        </div>
+        <div>
+            <a href={{url("/transferencia")}}>Transferencias</a>
+        </div>
+        <div>
+            <a href={{url("/extrato")}}>Ver Extratos</a>
+        </div>
     </div>
 @endsection

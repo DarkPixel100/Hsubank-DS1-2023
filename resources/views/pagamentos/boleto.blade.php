@@ -1,12 +1,20 @@
 @extends('layouts.template')
-
+<Script>
+    function credito(that) {
+    if (that.value == "credito") {
+        document.getElementById("escolhaCredito").style.display = "block";
+    } else {
+        document.getElementById("escolhaCredito").style.display = "none";
+    }
+}</Script>
 @section('title')
 Home
 @endsection
 
 @section ('main')
-    <h2>Extrato</h2>
-    <div class="containerExtrato">
+
+    <h2>Pagar boleto</h2>
+    <div class="containerBoleto">
         <table class="table">
             <thead>
                 <tr>
@@ -42,7 +50,8 @@ Home
             </tfoot>
         </table>
     </div>
+    </div>
     <div>
-        <a href={{url("/master")}}>Voltar para o master</a>
+        <a href={{url("pagamento/")}}>Voltar para os pagamentos</a>
     </div>
 @endsection

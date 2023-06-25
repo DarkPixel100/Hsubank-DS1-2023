@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Conta extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'agencia',
+        'userID',
+        'saldo',
+        'limite',
+        'chavePIX'
+    ];
+
+    public $timestamps = false;
 }
