@@ -59,8 +59,8 @@ class AuthenticationController extends Controller
                 'fullname' => 'O campo "Nome Completo" não pode ser vazio.',
                 'cpf' => 'O campo "CPF" está incompleto.',
                 'celular' => 'O campo "Celular" está incompleto.',
-                'deposito' => 'O campo "Depósito inicial" não pode ser vazio e deve conter :decimal casas decimais.',
-                'password' => 'A senha deve ter pelo menos :min caracteres.',
+                'deposito' => 'O campo "Depósito inicial" não pode ser vazio e deve conter 2 casas decimais.',
+                'password' => 'A senha deve ter pelo menos 8 caracteres.',
                 'password_confirmation' => 'As senhas não conferem.',
             ]
         );

@@ -9,11 +9,11 @@ class ViewController extends Controller
     //View do Login
     public function login()
     {
-        return view('login');
+        return view('authentication/login');
     }
     public function cadastro()
     {
-        return view('cadastro');
+        return view('authentication/cadastro');
     }
 
     //View do Master
@@ -74,4 +74,3 @@ class ViewController extends Controller
         return view('pagamentos/pagarFatura');
     }
 }
-

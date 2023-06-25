@@ -64,7 +64,7 @@
                 <input type="password" name="password_confirmation" minlength="8" required>
             </label>
             </fieldset>
-            <button type="submit">Criar a conta</button>
+            <button type="submit">Criar conta</button>
 
             <a href="{{url('login')}}">Já tem uma conta?</a>
         </form>
