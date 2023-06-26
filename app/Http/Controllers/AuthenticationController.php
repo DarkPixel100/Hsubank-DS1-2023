@@ -32,7 +32,7 @@ class AuthenticationController extends Controller
                 'loginTime' => now('America/Sao_Paulo'),
             ]);
 
-            return redirect('/master');
+            return redirect('/home');
         } else {
             return redirect()->back()->withErrors([
                 'username' => 'Usuário incorreto.',

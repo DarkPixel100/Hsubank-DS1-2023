@@ -21,7 +21,7 @@ return new class extends Migration
 
         Schema::create('contas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('agencia');
+            // $table->integer('agencia');
             $table->unsignedBigInteger('userID');
             $table->decimal('saldo', 10, 2);
             $table->decimal('limite');

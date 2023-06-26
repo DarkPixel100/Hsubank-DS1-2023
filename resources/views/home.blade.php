@@ -5,6 +5,7 @@ Home
 @endsection
 
 @section ('main')
+    <h1>Seja bem vindo, {{$firstName}}!</h1>
     <h2>Conta Bancária</h2>
     <div>
         <div>Saldo:  </div>

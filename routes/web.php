@@ -24,12 +24,11 @@ Route::get('/cadastro', [ViewController::class, 'cadastro']);
 Route::post('/cadastro', [AuthenticationController::class, 'cadastro'])->name('cadastro');
 Route::get('/login', [ViewController::class, 'login']);
 Route::post('/login', [AuthenticationController::class, 'login'])->name('login');
-// Route::post('master/', [UserController::class, 'validarLogin']);
-Route::get('/master', [ViewController::class, 'master']);
 
 
 
 //Master
+Route::get('/home', [ViewController::class, 'home']);
 Route::get('pagamento/', [ViewController::class, 'pagamento']);
 Route::get('extrato/', [ViewController::class, 'extrato']);
 Route::get('transferencia/', [ViewController::class, 'transferencia']);

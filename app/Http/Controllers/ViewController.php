@@ -16,10 +16,11 @@ class ViewController extends Controller
         return view('authentication/cadastro');
     }
 
-    //View do Master
-    public function master()
+    //View da Home
+    public function home(Request $request)
     {
-        return view('master');
+        $firstName = 'Carlos';
+        return view('home', [$firstName]);
     }
 
     public function pagamento()

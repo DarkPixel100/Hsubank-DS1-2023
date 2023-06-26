@@ -7,6 +7,6 @@ Home
 @section ('main')
     <h2>Transferencia</h2>
     <div>
-        <a href={{url("/master")}}>Voltar para o master</a>
+        <a href={{url("/home")}}>Voltar para o a página inicial</a>
     </div>
 @endsection

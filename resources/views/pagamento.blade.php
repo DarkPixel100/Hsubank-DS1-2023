@@ -21,6 +21,6 @@ Home
         </div>
     </div>
     <div>
-        <a href={{url("/master")}}>Voltar para o master</a>
+        <a href={{url("/home")}}>Voltar para a página inicial</a>
     </div>
 @endsection
