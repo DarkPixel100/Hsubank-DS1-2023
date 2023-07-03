@@ -9,6 +9,8 @@ class Conta extends Model
 {
     use HasFactory;
 
+    protected $table = 'contas';
+
     protected $fillable = [
         'agencia',
         'userID',
@@ -18,4 +20,10 @@ class Conta extends Model
     ];
 
     public $timestamps = false;
+
+
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'userID');
+    }
 }

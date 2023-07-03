@@ -9,10 +9,16 @@
     <title>@yield('title') - Hsubank</title>
 </head>
 <body>
+    @if (Auth::check()) @php
+        $conta = Auth::user()->contas;
+    @endphp @endif
+
     @include ('layouts.includes.header')
+
     <main>
         @yield('main')
     </main>
+
     @include ('layouts.includes.footer')
 </body>
 </html>

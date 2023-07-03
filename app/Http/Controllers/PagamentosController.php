@@ -21,13 +21,18 @@ class PagamentosController extends Controller
         // qntVezes = Se selecionado credito retorna ("1x" ou "2x" ou "3x")
         // comentario = cometario :D se "" -> AQUI Pag. PIX para Username da pessoas que recebeu
     }
-    public function pagBoleto(Request $request)
-    {
-        // chavePix é o nome da variavel que envia
-    }
     public function modPix($chavePix)
     {
         // chavePix é o nome da variavel que envia
     }
+    
+    public function pagBoleto(Request $request)
+    {
+        // 
+    }
 
+    public function pagDebito(Request $request)
+    {
+        // 
+    }
 }

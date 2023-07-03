@@ -49,7 +49,8 @@ Route::post('/regPix/', [PagamentosController::class, 'regPix']);
 //Pagamentos
 Route::get('/boleto', [ViewController::class, 'boleto']);
 Route::post('/boleto', [PagamentosController::class, 'pagboleto']);
-// Route::get('/pagamentoCartao', [ViewController::class, 'pagCartao']);
-// Route::get('/pagamentoFatura', [ViewController::class, 'pagFatura']);
+Route::get('/debito', [ViewController::class, 'debito']);
+Route::post('/debito', [ViewController::class, 'pagDebito']);
 
 //ENZO VOU FAZER OS BOLETOS
+//Não.

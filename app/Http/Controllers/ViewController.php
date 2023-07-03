@@ -63,15 +63,10 @@ class ViewController extends Controller
     }
 
 
-    //Pagar com Cartão| Crédito e Debito
-    public function pagCartao()
+    //Pagar com Debito
+    public function debito()
     {
-        return view('pagamentos/pagarCartao');
+        return view('pagamentos/pagarDebito');
     }
 
-    //Pagar Fatura
-    public function pagFatura()
-    {
-        return view('pagamentos/pagarFatura');
-    }
 }

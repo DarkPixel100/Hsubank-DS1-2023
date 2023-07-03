@@ -5,22 +5,19 @@ Home
 @endsection
 
 @section ('main')
-    <h2>Pagamento</h2>
-    <div class="containerPagamentos">
-        <div class="boxPagamentos">
-            <a href={{url("/pix")}}>Área Pix</a>
-        </div>
-        <div class="boxPagamentos">
-            <a href={{url("/boleto")}}>Boletos</a>
-        </div>
-        <div class="boxPagamentos">
-            <a href={{url("/pagamentoCartao")}}>Pagar com Cartão</a>
-        </div>
-        <div class="boxPagamentos">
-            <a href={{url("/pagamentoFatura")}}>Pagar Fatura</a>
-        </div>
-    </div>
-    <div>
-        <a href={{url("/home")}}>Voltar para a página inicial</a>
-    </div>
+    <section>
+        <h2>Pagamento</h2>
+        <ul>  
+            <li>
+                <a href={{url("/pix")}}>Área Pix</a>
+            </li>
+            <li>
+                <a href={{url("/boleto")}}>Boletos</a>
+            </li>
+            <li>
+                <a href={{url("/debito")}}>Pagar por Débito</a>
+            </li>
+            <a class="linkButton" href={{url("/home")}}>Cancelar</a>
+        </ul>
+    </section>
 @endsection

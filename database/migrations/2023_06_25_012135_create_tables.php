@@ -11,7 +11,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('cpf')->unique();
-            $table->string('fullname');
+            $table->string('firstname');
+            $table->string('surname');
             $table->string('username');
             $table->string('email')->unique();
             $table->string('celular')->unique();
@@ -21,7 +22,6 @@ return new class extends Migration
 
         Schema::create('contas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->integer('agencia');
             $table->unsignedBigInteger('userID');
             $table->decimal('saldo', 10, 2);
             $table->decimal('limite');

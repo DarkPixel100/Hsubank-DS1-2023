@@ -32,7 +32,7 @@ class AuthenticationController extends Controller
                 'loginTime' => now('America/Sao_Paulo'),
             ]);
 
-            return redirect('/home');
+            return redirect()->intended('/home');
         } else {
             return redirect()->back()->withErrors([
                 'username' => 'Usuário incorreto.',
@@ -47,7 +47,8 @@ class AuthenticationController extends Controller
             [
                 'username' => ['required', 'max:15'],
                 'email' => ['required'],
-                'fullname' => ['required'],
+                'firstname' => ['required'],
+                'surname' => ['required'],
                 'cpf' => ['required', 'min:11'],
                 'celular' => ['required', 'min:11'],
                 'deposito' => ['required', 'decimal:2'],
@@ -56,7 +57,8 @@ class AuthenticationController extends Controller
             [
                 'username' => 'O campo "Nome de Usuário" não pode ser vazio.',
                 'email' => 'O campo "Email" não pode ser vazio.',
-                'fullname' => 'O campo "Nome Completo" não pode ser vazio.',
+                'firstname' => 'O campo "Nome" não pode ser vazio.',
+                'surname' => 'O campo "Sobrenome" não pode ser vazio.',
                 'cpf' => 'O campo "CPF" está incompleto.',
                 'celular' => 'O campo "Celular" está incompleto.',
                 'deposito' => 'O campo "Depósito inicial" não pode ser vazio e deve conter 2 casas decimais.',
@@ -68,13 +70,20 @@ class AuthenticationController extends Controller
         User::create([
             'username' => $cadastroData['username'],
             'email' => $cadastroData['email'],
-            'fullname' => $cadastroData['fullname'],
+            'firstname' => $cadastroData['firstname'],
+            'surname' => $cadastroData['surname'],
             'cpf' => $cadastroData['cpf'],
             'celular' => $cadastroData['celular'],
             'password' => $cadastroData['password']
         ]);
 
-        return redirect('/');
+        Conta::create([
+        'userID' => User::all()->last()->id,
+        'saldo' => $cadastroData['deposito'],
+        'limite' => 1000
+    ]);
+
+        return redirect('/')->with('success', 'Cadastro realizado com sucesso.');
     }
 
     public function logout(Request $request)

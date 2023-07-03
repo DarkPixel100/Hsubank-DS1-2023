@@ -5,18 +5,21 @@ Home
 @endsection
 
 @section ('main')
-    <h1>Seja bem vindo, {{$firstName}}!</h1>
-    <h2>Conta Bancária</h2>
-    <div>
-        <div>Saldo:  </div>
-        <div>
-            <a href={{url("/pagamento")}}>Pagamentos</a>
-        </div>
-        <div>
-            <a href={{url("/transferencia")}}>Transferencias</a>
-        </div>
-        <div>
-            <a href={{url("/extrato")}}>Ver Extratos</a>
-        </div>
-    </div>
+    <section>
+        <h2>Conta Bancária</h2>
+        @if (Auth::check())
+            <ul>
+                <li>Saldo: {{Auth::user()->contas->saldo}}</li>
+                <li>
+                    <a href={{url("/pagamento")}}>Pagamentos</a>
+                </li>
+                <li>
+                    <a href={{url("/transferencia")}}>Transferencias</a>
+                </li>
+                <li>
+                    <a href={{url("/extrato")}}>Ver Extratos</a>
+                </li>
+            </ul>
+        @endif
+    </section>
 @endsection

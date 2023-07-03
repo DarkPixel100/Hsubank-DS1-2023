@@ -17,7 +17,8 @@ class User extends Authenticatable
 
     protected $fillable = [
         'cpf',
-        'fullname',
+        'firstname',
+        'surname',
         'username',
         'email',
         'celular',
@@ -34,10 +35,10 @@ class User extends Authenticatable
     public $timestamps = false;
 
     public function contas() {
-        return $this->hasOne(Conta::class, 'userID');
+        return $this->hasOne(Conta::class, 'userID', 'id');
     }
 
     public function auditorias() {
-        return $this->hasMany(Logs::class, 'userID');
+        return $this->hasMany(Logs::class, 'userID', 'id');
     }
 }

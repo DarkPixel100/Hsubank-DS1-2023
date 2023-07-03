@@ -13,16 +13,12 @@ Home
 
 @section ('main')
     <section>
-        <h2>Tranferencias</h2>
-            <form action="{{url("/transf")}}" method="post" class="fillerForm">
+        <h2>Pagamento - Débito</h2>
+            <form action="{{url("/debito")}}" method="post" class="fillerForm">
                 @csrf
                 <input type="hidden" name="idPessoa" value="{{--Linkar com BD--}}">
-                <label for="codconta">
-                    Digite o código da conta do destinatário do pagamento:
-                    <input type="text" name="codconta">
-                </label>
                 <label for="qntDinheiro">
-                    Total para transferência:
+                    Total a pagar:
                     <input type="number" name="qntDinheiro">
                 </label>
                 <label for="comentario">
@@ -30,7 +26,7 @@ Home
                     <input type="text" name="comentario">
                 </label>
                 <button type="submit">Enviar</button>
-                <a class="linkButton" href={{url("/home")}}>Cancelar</a>
+                <a class="linkButton" href={{url("/pagamentos")}}>Cancelar</a>
             </form>
     </section>
 @endsection

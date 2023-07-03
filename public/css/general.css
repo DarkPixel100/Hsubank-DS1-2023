@@ -35,6 +35,7 @@ header {
 main {
     width: 85%;
     display: grid;
+    gap: .5rem;
 }
 
 footer {
@@ -56,10 +57,20 @@ section {
     padding: 2rem;
 }
 
+main:first-child:nth-last-child(1) {
+    justify-self: center;
+    align-self: center;
+    width: 60%;
+}
+
 .sectionTitle {
     width: 100%;
     font-size: 2rem;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 button {
@@ -80,7 +91,10 @@ label {
     gap: 1rem;
 }
 
-.fillerForm input, .fillerForm button {
+.fillerForm input,
+.fillerForm button,
+.linkButton {
+    text-align: center;
     display: block;
     background-color: var(--bg2);
     padding: .5rem .45rem;

@@ -6,7 +6,7 @@ Home
 
 @section ('main')
     <h2>Extrato</h2>
-    <div class="containerExtrato">
+    <section>
         <table class="table">
             <thead>
                 <tr>
@@ -17,7 +17,7 @@ Home
                 </tr>
             </thead>
             <tbody>
-                {{-- @forelse ($var de pesquisa as $historico de transferencias da pessoa ) --}}
+                <!-- forelse ($var de pesquisa as $historico de transferencias da pessoa ) -->
                 <tr>
                     <td>{{-- $var de pesquisa -> Data de Transferência --}}</td>
                     <td>{{-- $var de pesquisa -> Tipo de Transferência --}}</td>
@@ -41,8 +41,6 @@ Home
                 </tr>
             </tfoot>
         </table>
-    </div>
-    <div>
-        <a href={{url("/home")}}>Voltar para a página inicial</a>
-    </div>
+        <a class="linkButton" href={{url("/home")}}>Cancelar</a>
+    </section>
 @endsection

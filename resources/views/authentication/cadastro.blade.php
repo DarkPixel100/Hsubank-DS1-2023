@@ -29,9 +29,13 @@
 
             <fieldset>
                 <legend>Dados Pessoais</legend>
-                <label for="fullname">
-                    Nome Completo:
-                    <input type="text" name="fullname" size="25" required>
+                <label for="firstname">
+                    Nome:
+                    <input type="text" name="firstname" size="25" required>
+                </label>
+                <label for="surname">
+                    Sobrenome:
+                    <input type="text" name="surname" size="25" required>
                 </label>
 
                 <label for="cpf">
