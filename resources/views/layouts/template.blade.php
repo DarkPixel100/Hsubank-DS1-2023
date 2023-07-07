@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/general.css') }}" />
+    <link rel="icon" href={{asset('img/hsubank_logo.svg')}}>
     <title>@yield('title') - Hsubank</title>
 </head>
 <body>

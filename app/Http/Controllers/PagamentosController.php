@@ -35,4 +35,9 @@ class PagamentosController extends Controller
     {
         // 
     }
+
+    public function fazertransf(Request $request)
+    {
+        // 
+    }
 }

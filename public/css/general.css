@@ -25,16 +25,29 @@ body {
 }
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     font-size: 4rem;
     padding-block: .5rem;
-    gap: 1rem;
+    position: relative;
+}
+
+#hello {
+    align-self: center;
+    position: absolute;
+    left: 1rem;
+    font-size: large;
+    font-weight: normal;
+}
+
+b {
+    font-weight: bold;
 }
 
 main {
     width: 85%;
-    display: grid;
+    display: flex;
     gap: .5rem;
 }
 
@@ -57,15 +70,26 @@ section {
     padding: 2rem;
 }
 
-main:first-child:nth-last-child(1) {
+section:first-child:nth-last-child(1) {
     justify-self: center;
     align-self: center;
-    width: 60%;
+    width: 100%;
+}
+
+section:first-child:nth-last-child(2),
+section:first-child:nth-last-child(2)~section {
+    width: 50%;
 }
 
 .sectionTitle {
     width: 100%;
     font-size: 2rem;
+    text-align: center;
+}
+
+#saldo {
+    font-size: 5rem;
+    font-weight: bolder;
     text-align: center;
 }
 
@@ -79,7 +103,6 @@ button {
 }
 
 label {
-    /* max-width: calc(100%/3); */
     padding-block: .25rem;
     display: grid;
     gap: .25rem;
@@ -94,7 +117,6 @@ label {
 .fillerForm input,
 .fillerForm button,
 .linkButton {
-    text-align: center;
     display: block;
     background-color: var(--bg2);
     padding: .5rem .45rem;

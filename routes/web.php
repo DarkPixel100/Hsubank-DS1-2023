@@ -51,6 +51,7 @@ Route::get('/boleto', [ViewController::class, 'boleto']);
 Route::post('/boleto', [PagamentosController::class, 'pagboleto']);
 Route::get('/debito', [ViewController::class, 'debito']);
 Route::post('/debito', [ViewController::class, 'pagDebito']);
+Route::post('transferencia/', [ViewController::class, 'fazertransf']);
 
 //ENZO VOU FAZER OS BOLETOS
 //Não.

@@ -1,25 +1,28 @@
 @extends('layouts.template')
 
 @section('title')
-Home
+    Home
 @endsection
 
-@section ('main')
-    <section>
-        <h2>Conta Bancária</h2>
-        @if (Auth::check())
+@section('main')
+    @if (Auth::check())
+        <section>
+            <h2>Conta Bancária</h2>
+            <div id="saldo">Saldo:<br>{{ Auth::user()->contas->saldo }}</div>
+        </section>
+        <section>
+            <h2>Acesse:</h2>
             <ul>
-                <li>Saldo: {{Auth::user()->contas->saldo}}</li>
                 <li>
-                    <a href={{url("/pagamento")}}>Pagamentos</a>
+                    <a href={{ url('/pagamento') }}>Pagamentos</a>
                 </li>
                 <li>
-                    <a href={{url("/transferencia")}}>Transferencias</a>
+                    <a href={{ url('/transferencia') }}>Transferencias</a>
                 </li>
                 <li>
-                    <a href={{url("/extrato")}}>Ver Extratos</a>
+                    <a href={{ url('/extrato') }}>Ver Extratos</a>
                 </li>
             </ul>
-        @endif
-    </section>
+        </section>
+    @endif
 @endsection
