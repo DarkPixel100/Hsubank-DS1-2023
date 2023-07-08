@@ -13,8 +13,8 @@ Home
 
 @section ('main')
     <section>
-        <h2>Área Pix - Pagar</h2>
-            <form action="{{url("/pagPix")}}" method="post" class="fillerForm">
+        <h2 class="sectionTitle">Área Pix - Pagar</h2>
+            <form action="{{url("/pagPix")}}" method="post" class="fillerForm" autocomplete="off">
                 <label>A chave Pix é o dado que você informa aos seus contatos para receber transferências em sua conta em poucos segundos.
                     Você pode criar uma ou mais chaves, que podem ser e-mail, CPF/CNPJ e telefone (incluindo números com DD).</label>
                 @csrf
@@ -24,7 +24,7 @@ Home
                 </label>
                 <label for="qntDinheiro">
                     Total a pagar:
-                    <input type="number" name="qntDinheiro">
+                    <input type="number" name="qntDinheiro" step=".01">
                 </label>
                     <label for="tipoTransferencia">Transferindo com:
                     <input type="radio" name="tipoTransferencia" value="saldo">

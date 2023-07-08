@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ChavePix;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -17,10 +19,9 @@ class ViewController extends Controller
     }
 
     //View da Home
-    public function home(Request $request)
+    public function home()
     {
-        $firstName = 'Carlos';
-        return view('home', [$firstName]);
+        return view('home');
     }
 
     public function pagamento()
@@ -53,7 +54,7 @@ class ViewController extends Controller
     }
     public function modPix()
     {
-        return view('pix/modificarPix');
+        return view('pix/modificarPix', ['chaves' => ChavePix::where('contaID', '=', Auth::user()->contas->id)->get()]);
     }
 
     //Boletos

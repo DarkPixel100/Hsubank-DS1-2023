@@ -14,7 +14,7 @@ Home
 @section ('main')
     <section>
             <h2>Pagamento - Boleto</h2>
-            <form action="{{url("/boleto")}}" method="post" class="fillerForm">
+            <form action="{{url("/boleto")}}" method="post" class="fillerForm" autocomplete="off">
                 @csrf
                 <input type="hidden" name="idPessoa" value="{{--Linkar com BD--}}">
                 <label for="codBar">
@@ -23,7 +23,7 @@ Home
                 </label>
                 <label for="qntDinheiro">
                     Total a pagar:
-                    <input type="number" name="qntDinheiro">
+                    <input type="number" name="qntDinheiro" step=".01">
                 </label>
                     <label for="tipoTransferencia">Transferindo com:
                     <input type="radio" name="tipoTransferencia" value="saldo">
@@ -43,7 +43,7 @@ Home
                     <input type="text" name="comentario">
                 </label>
                 <button type="submit">Enviar</button>
-                <a class="linkButton" href={{url("/pagamentos")}}>Cancelar</a>
+                <a class="linkButton" href={{url("/pagamento")}}>Cancelar</a>
             </form>
     </section>
 @endsection

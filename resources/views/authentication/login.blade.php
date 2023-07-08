@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-    <section style="justify-self: center; align-self: center; width: 60%">
+    <section id="authSection">
         <h1 class="sectionTitle">Login</h1>
         <form action="{{ route('login') }}" method="POST" class="fillerForm" autocomplete="off">
             @csrf

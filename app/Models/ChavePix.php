@@ -5,23 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Conta extends Model
+class ChavePix extends Model
 {
     use HasFactory;
 
-    protected $table = 'contas';
+    protected $table = 'chavesPix';
 
     protected $fillable = [
-        'agencia',
-        'userID',
-        'saldo',
-        'limite'
+        'contaID',
+        'chavePix'
     ];
 
     public $timestamps = false;
-
     public function owner()
     {
-        return $this->belongsTo(User::class, 'userID');
+        return $this->belongsTo(Conta::class, 'contaID', 'id');
     }
 }
