@@ -5,8 +5,8 @@ Home
 @endsection
 
 @section ('main')
-    <h2>Extrato</h2>
-    <section>
+<section>
+        <h2 class="sectionTitle">Extrato</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -26,7 +26,7 @@ Home
                 </tr>
                     {{-- @empty --}}
                     <tr>
-                        <td colspan="5">Sem extratos para mostrar.
+                        <td colspan="5" style="text-align: center;">Sem extratos para mostrar.
                         </td>
                     </tr>
 

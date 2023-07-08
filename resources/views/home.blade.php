@@ -7,20 +7,22 @@
 @section('main')
     @if (Auth::check())
         <section>
-            <h2>Conta Bancária</h2>
-            <div id="saldo">Saldo:<br>{{ Auth::user()->contas->saldo }}</div>
+            <h2 class="sectionTitle">Conta:</h2>
+            <div class="accountInfo">Nº da Conta: {{ Auth::user()->contas->id }}</div>
+            <div class="accountInfo">Saldo:<br>R$ {{ Auth::user()->contas->saldo }}</div>
+            <div class="accountInfo">Limite:<br>R$ 1000.00</div>
         </section>
         <section>
-            <h2>Acesse:</h2>
+            <h2 class="sectionTitle">Acesse:</h2>
             <ul>
                 <li>
-                    <a href={{ url('/pagamento') }}>Pagamentos</a>
+                    <a class="linkButton" href={{ url('/pagamento') }}>Pagamentos</a>
                 </li>
                 <li>
-                    <a href={{ url('/transferencia') }}>Transferencias</a>
+                    <a class="linkButton" href={{ url('/transferencia') }}>Transferências</a>
                 </li>
                 <li>
-                    <a href={{ url('/extrato') }}>Ver Extratos</a>
+                    <a class="linkButton" href={{ url('/extrato') }}>Ver Extratos</a>
                 </li>
             </ul>
         </section>

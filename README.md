@@ -1,30 +1,26 @@
-Progresso do trabalho 15%
+Progresso do trabalho 70%
 
 HTML
 - Adicionar Paginas
-- 
+- Login
 - Forms
-- 
-
+- Transferência (WIP)
+- Funcionalidade do Limite
 
 
 CSS
-- Arrumar form do PIX
-- 
-- 
-- 
+- Manutenção geral da estética
 
 
 Programação
-- Pagamentos
+- Pagamentos (WIP)
 - Extratos
-- Limite
+- Limite (WIP)
 - Rotas
-- Transferencia
+- Transferência (WIP)
 
 
 ATUAL
 - TUT - Criando as rotas e paginas -> modChavePIX
-- DIEGO - Backend -> Login (Básico feito)
-- ENZO - ?
-
+- DIEGO - Backend -> Login, auditoria e transferências
+- ENZO - Backend -> Transferências e pagamentos
