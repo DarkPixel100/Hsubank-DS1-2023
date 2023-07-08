@@ -16,12 +16,12 @@ class AuthenticationController extends Controller
         $loginData = $request->validate(
             [
                 'username' => ['required'],
-                'password' => ['required']
+                'password' => ['required'],
             ],
             [
                 'username' => 'O campo "Nome de Usuário" não pode estar vazio',
-                'password' => 'A senha não pode estar em branco'
-            ]
+                'password' => 'A senha não pode estar em branco',
+            ],
         );
 
         if (Auth::attempt($loginData)) {
@@ -34,10 +34,12 @@ class AuthenticationController extends Controller
 
             return redirect()->intended('/home');
         } else {
-            return redirect()->back()->withErrors([
-                'username' => 'Usuário incorreto.',
-                'password' => 'Senha incorreta.',
-            ]);
+            return redirect()
+                ->back()
+                ->withErrors([
+                    'username' => 'Usuário incorreto.',
+                    'password' => 'Senha incorreta.',
+                ]);
         }
     }
 
@@ -52,7 +54,7 @@ class AuthenticationController extends Controller
                 'cpf' => ['required', 'min:11'],
                 'celular' => ['required', 'min:11'],
                 'deposito' => ['required', 'decimal:2'],
-                'password' => ['required', 'min:8', 'confirmed']
+                'password' => ['required', 'min:8', 'confirmed'],
             ],
             [
                 'username' => 'O campo "Nome de Usuário" não pode ser vazio.',
@@ -64,7 +66,7 @@ class AuthenticationController extends Controller
                 'deposito' => 'O campo "Depósito inicial" não pode ser vazio e deve conter 2 casas decimais.',
                 'password' => 'A senha deve ter pelo menos 8 caracteres.',
                 'password_confirmation' => 'As senhas não conferem.',
-            ]
+            ],
         );
 
         User::create([
@@ -74,20 +76,24 @@ class AuthenticationController extends Controller
             'surname' => $cadastroData['surname'],
             'cpf' => $cadastroData['cpf'],
             'celular' => $cadastroData['celular'],
-            'password' => $cadastroData['password']
+            'password' => $cadastroData['password'],
         ]);
 
         Conta::create([
-        'userID' => User::all()->last()->id,
-        'saldo' => $cadastroData['deposito'],
-        'limite' => 1000
-    ]);
+            'userID' => User::all()->last()->id,
+            'saldo' => $cadastroData['deposito'],
+            'limite' => 1000,
+        ]);
 
         return redirect('/')->with('success', 'Cadastro realizado com sucesso.');
     }
 
     public function logout(Request $request)
     {
+        Logs::where('userID', '=', Auth::id())
+            ->latest('loginTime')
+            ->update(['logoutTime' => now('America/Sao_Paulo')]);
+        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');

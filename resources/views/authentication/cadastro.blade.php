@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-    <section style="justify-self: center; align-self: center; width: 60%">
+    <section id="authSection">
         <h1 class="sectionTitle">Cadastro</h1>
         @if (count($errors) > 0)
             @foreach ($errors->all() as $error)
@@ -31,11 +31,11 @@
                 <legend>Dados Pessoais</legend>
                 <label for="firstname">
                     Nome:
-                    <input type="text" name="firstname" size="25" required pattern="/^[a-zA-Z][\sa-zA-Z]*$/">
+                    <input type="text" name="firstname" size="25" required pattern="[a-zA-Z]+">
                 </label>
                 <label for="surname">
                     Sobrenome:
-                    <input type="text" name="surname" size="25" required pattern="/^[a-zA-Z][\sa-zA-Z]*$/">
+                    <input type="text" name="surname" size="25" required pattern="[a-z A-Z]+">
                 </label>
 
                 <label for="cpf">
@@ -74,7 +74,7 @@
             <fieldset>
                 <label for="deposito">
                     Depósito inicial:
-                    <input type="text" name="deposito" pattern="[0-9]+\.[0-9]+" required>
+                    <input type="number" name="deposito" step=".01" required>
                 </label>
             </fieldset>
 
