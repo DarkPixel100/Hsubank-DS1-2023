@@ -22,14 +22,11 @@
         }
     </script>
     <section>
-        <h2 class="sectionTitle">Pagamento - Boleto</h2>
-        <form action="{{ url('/boleto') }}" method="post" class="fillerForm" autocomplete="off">
+        <h2 class="sectionTitle">Área Pix - Pagar</h2>
+        <form action="{{ url('/pagPix') }}" method="post" class="fillerForm" autocomplete="off">
             @csrf
-            {{-- <input name="idPessoa" value="Linkar com BD" hidden> --}}
-            <label for="codBar">
-                Digite o código de barras do boleto para pagamento:
-                <input type="text" name="codBra">
-            </label>
+            <p>Pagar para {{ $destinatario }}</p>
+            <input type="text" name="chavePix" value="{{ $chavePix }}" hidden>
             <label for="qntDinheiro">
                 Total a pagar:
                 <input type="number" name="qntDinheiro" step=".01" onchange="parcela(this)">
@@ -40,7 +37,7 @@
                 </label>
                 <label class="radioLabel">Crédito
                     <input type="radio" name="tipoTransferencia" value="credito" required onchange="credito(this);">
-                    <div id="escolhaCredito" style="display: none;">
+                    <div id="escolhaCredito" style="display: none; ">
                         <select name="qntVezes">
                             <option value="1x">1x de R$0,00</option>
                             <option value="2x">2x de R$0,00</option>
@@ -49,12 +46,12 @@
                     </div>
                 </label>
             </label>
-            <label for="comentario">
+            <label for="chavePix">
                 Comentário (ou descrição):
                 <input type="text" name="comentario">
             </label>
             <button type="submit">Enviar</button>
-            <a class="linkButton" href={{ url('/pagamento') }}>Cancelar</a>
+            <a class="linkButton" href={{ url('/pix') }}>Cancelar</a>
         </form>
     </section>
 @endsection

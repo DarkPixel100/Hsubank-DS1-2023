@@ -31,6 +31,12 @@ return new class extends Migration
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
         });
 
+        Schema::create('chavespix', function (Blueprint $table) {
+            $table->unsignedBigInteger('contaID');
+            $table->string('chavePix');
+            $table->foreign('contaID')->references('id')->on('contas');
+        });
+
         Schema::create('logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('userID');
@@ -46,6 +52,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('logs');
+        Schema::dropIfExists('chavespix');
         Schema::dropIfExists('contas');
         Schema::dropIfExists('users');
     }

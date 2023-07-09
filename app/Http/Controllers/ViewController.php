@@ -46,7 +46,7 @@ class ViewController extends Controller
     }
     public function pagPix()
     {
-        return view('pix/pagamentoPix');
+        return view('pix/pagamentoPixInicial');
     }
     public function regPix()
     {

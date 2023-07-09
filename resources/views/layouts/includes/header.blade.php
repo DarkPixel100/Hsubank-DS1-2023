@@ -4,7 +4,7 @@
         <h1>Hsubank</h1>
     </div>
     @if (Auth::check())
-        <h2 id="hello">Olá, <b>{{ Auth::user()->firstname }}</b>!</h2>
+        <h2 id="hello">Olá, <b><a href="{{ url('/') }}">{{ Auth::user()->firstname }}</a></b>!</h2>
         <form action="{{ route('logout') }}" method="POST" autocomplete="off">
             @csrf
             <button id="logout">Logout</button>

@@ -16,12 +16,12 @@
             @csrf
             <fieldset>
                 <legend>Dados da Conta</legend>
-                <label for="username">
+                <label class="textLabel" for="username">
                     Nome de Usuário:
                     <input type="text" name="username" size="16" maxlength="15" required>
                 </label>
 
-                <label for="email">
+                <label class="textLabel" for="email">
                     Email:
                     <input type="text" name="email" required>
                 </label>
@@ -29,16 +29,16 @@
 
             <fieldset>
                 <legend>Dados Pessoais</legend>
-                <label for="firstname">
+                <label class="textLabel" for="firstname">
                     Nome:
                     <input type="text" name="firstname" size="25" required pattern="[a-zA-Z]+">
                 </label>
-                <label for="surname">
+                <label class="textLabel" for="surname">
                     Sobrenome:
                     <input type="text" name="surname" size="25" required pattern="[a-z A-Z]+">
                 </label>
 
-                <label for="cpf">
+                <label class="textLabel" for="cpf">
                     CPF:
                     <input type="text" name="cpf" size="14" minlength="14" maxlength="14"
                         pattern="[0-9]+\.[0-9]+\.[0-9]+-[0-9]+" required
@@ -59,7 +59,7 @@
                         ">
                 </label>
 
-                <label for="celular">
+                <label class="textLabel" for="celular">
                     Celular:
                     <input type="text" name="celular" size="11" minlength="11" maxlength="11" required
                         onkeypress="
@@ -72,19 +72,19 @@
 
 
             <fieldset>
-                <label for="deposito">
+                <label class="textLabel" for="deposito">
                     Depósito inicial:
                     <input type="number" name="deposito" step=".01" required>
                 </label>
             </fieldset>
 
             <fieldset>
-                <label for="password">
+                <label class="textLabel" for="password">
                     Senha:
                     <input type="password" name="password" minlength="8" required>
                 </label>
 
-                <label for="password_confirmation">
+                <label class="textLabel" for="password_confirmation">
                     Repita a Senha:
                     <input type="password" name="password_confirmation" minlength="8" required>
                 </label>

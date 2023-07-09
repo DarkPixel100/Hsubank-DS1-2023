@@ -15,7 +15,7 @@
         }
     </script>
     <section>
-        <h2>Pagamento - Débito</h2>
+        <h2 class="sectionTitle">Pagamento - Débito</h2>
         <form action="{{ url('/debito') }}" method="post" class="fillerForm" autocomplete="off">
             @csrf
             {{-- <input type="hidden" name="idPessoa" value="Linkar com BD"> --}}
@@ -24,7 +24,7 @@
                 <input type="number" name="qntDinheiro" step=".01">
             </label>
             <label for="comentario">
-                Comentário:
+                Comentário (ou descrição):
                 <input type="text" name="comentario">
             </label>
             <button type="submit">Enviar</button>

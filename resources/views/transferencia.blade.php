@@ -6,7 +6,7 @@
 
 @section('main')
     <section>
-        <h2>Tranferências</h2>
+        <h2 class="sectionTitle">Tranferências</h2>
         <form action="{{ route('transferencia') }}" method="post" class="fillerForm" autocomplete="off">
             @csrf
             <input type="hidden" name="idPessoa" value="{{-- Linkar com BD --}}">
@@ -19,7 +19,7 @@
                 <input type="number" name="qntDinheiro" min="0" step=".01">
             </label>
             <label for="comentario">
-                Comentário:
+                Comentário (ou descrição):
                 <input type="text" name="comentario">
             </label>
             <button type="submit">Enviar</button>

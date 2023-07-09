@@ -10,7 +10,7 @@
             <h2 class="sectionTitle">Conta:</h2>
             <div class="accountInfo">Nº da Conta: {{ Auth::user()->contas->id }}</div>
             <div class="accountInfo">Saldo:<br>R$ {{ Auth::user()->contas->saldo }}</div>
-            <div class="accountInfo">Limite:<br>R$ 1000.00</div>
+            <div class="accountInfo">Limite:<br>R$ {{ Auth::user()->contas->limite }}</div>
         </section>
         <section>
             <h2 class="sectionTitle">Acesse:</h2>

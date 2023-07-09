@@ -138,10 +138,16 @@ button {
     border-radius: var(--roundness);
 }
 
-label {
+.textLabel {
     padding-block: .25em;
     display: grid;
     gap: .25rem;
+}
+
+.radioLabel {
+    display: flex;
+    gap: .5em;
+    align-items: center;
 }
 
 .fillerForm {
@@ -150,7 +156,7 @@ label {
     gap: 1rem;
 }
 
-.fillerForm input,
+.fillerForm input:not([hidden]),
 .fillerForm button,
 .linkButton {
     display: block;

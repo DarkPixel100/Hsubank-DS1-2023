@@ -24,12 +24,15 @@ class AuthenticationController extends Controller
             ],
         );
 
+        if (Auth::check()) {
+            AuthenticationController::logout($request);
+        }
+
         if (Auth::attempt($loginData)) {
             $request->session()->regenerate();
 
             Logs::create([
-                'userID' => Auth::id(),
-                'loginTime' => now('America/Sao_Paulo'),
+                'userID' => Auth::id()
             ]);
 
             return redirect()->intended('/home');

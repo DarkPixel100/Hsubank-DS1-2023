@@ -9,7 +9,7 @@
         <h1 class="sectionTitle">Login</h1>
         <form action="{{ route('login') }}" method="POST" class="fillerForm" autocomplete="off">
             @csrf
-            <label for="username">
+            <label class="textLabel" for="username">
                 Nome de Usuário:
                 <input type="text" name="username" required>
                 @error('username')
@@ -17,7 +17,7 @@
                 @enderror
             </label>
 
-            <label for="password">
+            <label class="textLabel" for="password">
                 Senha:
                 <input type="password" name="password" required>
                 @error('password')
