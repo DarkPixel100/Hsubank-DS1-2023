@@ -43,6 +43,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('pix/', [ViewController::class, 'pix']);
         Route::get('pagPix/', [ViewController::class, 'pagPix']);
 
+        Route::post('/findPix', [ViewController::class, 'findPix'])->name('findPix');
+        // Route::get('/findPix', [ViewController::class, 'findPix']);
+
         Route::get('/modPix', [ViewController::class, 'modPix']);
         Route::post('/modPix', [OperationsController::class, 'modPix']);
         Route::get('/regPix', [ViewController::class, 'regPix']);
@@ -52,7 +55,6 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::controller(OperationsController::class)->group(function () {
-        Route::post('/findPix', [OperationsController::class, 'findPix'])->name('findPix');
         Route::post('/pagPix', [OperationsController::class, 'pagPix'])->name('pagPix');
         Route::post('/regPix', [OperationsController::class, 'regPix']);
 

@@ -6,6 +6,11 @@
 
 @section('main')
     <section>
+        @if (count($errors) > 0)
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
         <h2 class="sectionTitle">Área Pix - Pagar</h2>
         <form action="{{ route('findPix') }}" method="post" class="fillerForm" autocomplete="off">
             <label>A chave Pix é o dado que você informa aos seus contatos para receber transferências em sua conta em

@@ -5,7 +5,7 @@
 @endsection
 @section('main')
     <section>
-        <h2 class="sectionTitle">Área Pix - Modificar chave</h2>
+        <h2 class="sectionTitle">Área Pix - Listar chaves</h2>
         <table>
             <thead>
                 <tr>

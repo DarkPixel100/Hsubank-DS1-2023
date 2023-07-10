@@ -7,6 +7,12 @@
 @section('main')
     <section>
         <h2 class="sectionTitle">Tranferências</h2>
+        @if (count($errors) > 0)
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
+        <br>
         <form action="{{ route('transferencia') }}" method="post" class="fillerForm" autocomplete="off">
             @csrf
             <input type="hidden" name="idPessoa" value="{{-- Linkar com BD --}}">

@@ -6,6 +6,8 @@
     --bg2: #050614;
     --footer: #080917;
     --error: #f778a2;
+    --positive: #b4ff85;
+    --negative: #ff5a91;
     --roundness: 10px;
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -89,6 +91,7 @@ section {
     background-color: var(--bg1);
     border-radius: var(--roundness);
     padding: 2em;
+    margin-bottom: 3em;
 }
 
 section:first-child:nth-last-child(1) {
@@ -118,7 +121,7 @@ section:first-child:nth-last-child(2)~section {
 }
 
 ul {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 li:not(:last-child) {

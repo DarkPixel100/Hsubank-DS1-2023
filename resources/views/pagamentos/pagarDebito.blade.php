@@ -5,17 +5,14 @@
 @endsection
 
 @section('main')
-    <script>
-        function credito(that) {
-            if (that.value == "credito") {
-                document.getElementById("escolhaCredito").style.display = "block";
-            } else {
-                document.getElementById("escolhaCredito").style.display = "none";
-            }
-        }
-    </script>
     <section>
         <h2 class="sectionTitle">Pagamento - Débito</h2>
+        @if (count($errors) > 0)
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
+        <br>
         <form action="{{ url('/debito') }}" method="post" class="fillerForm" autocomplete="off">
             @csrf
             {{-- <input type="hidden" name="idPessoa" value="Linkar com BD"> --}}

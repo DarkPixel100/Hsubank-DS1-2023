@@ -24,4 +24,9 @@ class Conta extends Model
     {
         return $this->belongsTo(User::class, 'userID');
     }
+
+    public function chaves()
+    {
+        return $this->hasMany(ChavePix::class, 'contaID', 'id');
+    }
 }

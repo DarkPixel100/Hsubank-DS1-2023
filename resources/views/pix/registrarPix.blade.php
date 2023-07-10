@@ -18,11 +18,27 @@
                 Você pode criar uma ou mais chaves, que podem ser e-mail, CPF/CNPJ ou telefone (incluindo números com
                 DDD).</label>
             @csrf
-            <label for="chavePix">
-                Chave Pix:
-                <input type="text" name="chavePix">
-            </label>
-            <button type="submit">Enviar</button>
+            @php
+                $cadastradas = [];
+                $chavesTable = Auth::user()->contas->chaves->toArray();
+                foreach ($chavesTable as $chaveRow) {
+                    array_push($cadastradas, $chaveRow['chavePix']);
+                }
+                $options = array_diff([Auth::user()->email, Auth::user()->cpf, Auth::user()->celular], $cadastradas);
+            @endphp
+            @if (sizeof($options) > 0)
+                <label for="chavePix">
+                    Chave Pix:
+                    <select name="chavePix">
+                        @foreach ($options as $chave)
+                            <option value="{{ $chave }}">{{ $chave }}</option>
+                        @endforeach
+                    </select>
+                </label>
+                <button type="submit">Enviar</button>
+            @else
+                <h3>Você não pode mais registrar chaves pix</h3>
+            @endif
             <a class="linkButton" href={{ url('/pix') }}>Cancelar</a>
         </form>
     </section>

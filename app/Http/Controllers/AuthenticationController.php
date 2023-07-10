@@ -32,7 +32,8 @@ class AuthenticationController extends Controller
             $request->session()->regenerate();
 
             Logs::create([
-                'userID' => Auth::id()
+                'userID' => Auth::id(),
+                'loginTime' => now('America/Sao_Paulo')
             ]);
 
             return redirect()->intended('/home');
@@ -56,7 +57,7 @@ class AuthenticationController extends Controller
                 'surname' => ['required'],
                 'cpf' => ['required', 'min:11'],
                 'celular' => ['required', 'min:11'],
-                'deposito' => ['required', 'decimal:2'],
+                'deposito' => ['required'],
                 'password' => ['required', 'min:8', 'confirmed'],
             ],
             [
@@ -66,7 +67,7 @@ class AuthenticationController extends Controller
                 'surname' => 'O campo "Sobrenome" não pode ser vazio.',
                 'cpf' => 'O campo "CPF" está incompleto.',
                 'celular' => 'O campo "Celular" está incompleto.',
-                'deposito' => 'O campo "Depósito inicial" não pode ser vazio e deve conter 2 casas decimais.',
+                'deposito' => 'O campo "Depósito inicial" não pode ser vazio.',
                 'password' => 'A senha deve ter pelo menos 8 caracteres.',
                 'password_confirmation' => 'As senhas não conferem.',
             ],
@@ -86,6 +87,7 @@ class AuthenticationController extends Controller
             'userID' => User::all()->last()->id,
             'saldo' => $cadastroData['deposito'],
             'limite' => 1000,
+            'criacaoConta' => now('America/Sao_Paulo')
         ]);
 
         return redirect('/')->with('success', 'Cadastro realizado com sucesso.');

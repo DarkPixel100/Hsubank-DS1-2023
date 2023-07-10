@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Conta;
 use App\Models\ChavePix;
+use App\Models\Operacao;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -31,7 +34,12 @@ class ViewController extends Controller
 
     public function extrato()
     {
-        return view('extrato');
+        return view('extrato', [
+            'extratos' => Operacao::where('origemID', '=', Auth::user()->contas->id)
+                ->orwhere('destinoID', '=', Auth::user()->contas->id)
+                ->orderby('time', 'DESC')
+                ->get(),
+        ]);
     }
     public function transferencia()
     {
@@ -48,13 +56,35 @@ class ViewController extends Controller
     {
         return view('pix/pagamentoPixInicial');
     }
+    public function findPix(Request $request)
+    {
+        if ($request->chavePix == null) {
+            return redirect(route('pagPix'))->withErrors(['errors' => 'Precisa adicionar uma chave PIX']);
+        }
+        $chaveDestino = ChavePix::where('chavePix', '=', $request->chavePix)->first();
+        if ($chaveDestino == null) {
+            return redirect(route('pagPix'))->withErrors(['errors' => 'Conta não encontrada']);
+        }
+        $contaDestino = Conta::find($chaveDestino->contaID);
+        $destinatario = User::find($contaDestino->userID);
+        if ($destinatario == Auth::user()) {
+            return redirect(route('pagPix'))->withErrors(['errors' => 'Você não pode realizar um PIX para si mesmo']);
+        }
+        $nome = $destinatario->firstname . ' ' . $destinatario->surname;
+
+        return view('pix/pagamentoPixFinal')->with(['destinatario' => $nome, 'chavePix' => $request->chavePix]);
+    }
+    // public function findPixFinal()
+    // {
+    //     return view('pix/pagamentoPixFinal');
+    // }
     public function regPix()
     {
         return view('pix/registrarPix');
     }
     public function modPix()
     {
-        return view('pix/modificarPix', ['chaves' => ChavePix::where('contaID', '=', Auth::user()->contas->id)->get()]);
+        return view('pix/listarPix', ['chaves' => ChavePix::where('contaID', '=', Auth::user()->contas->id)->get()]);
     }
 
     //Boletos
@@ -63,11 +93,9 @@ class ViewController extends Controller
         return view('pagamentos/boleto');
     }
 
-
     //Pagar com Debito
     public function debito()
     {
         return view('pagamentos/pagarDebito');
     }
-
 }

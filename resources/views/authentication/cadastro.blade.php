@@ -23,7 +23,7 @@
 
                 <label class="textLabel" for="email">
                     Email:
-                    <input type="text" name="email" required>
+                    <input type="text" name="email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
                 </label>
             </fieldset>
 
@@ -31,11 +31,11 @@
                 <legend>Dados Pessoais</legend>
                 <label class="textLabel" for="firstname">
                     Nome:
-                    <input type="text" name="firstname" size="25" required pattern="[a-zA-Z]+">
+                    <input type="text" name="firstname" size="25" required pattern="[A-z À-ÿ]+">
                 </label>
                 <label class="textLabel" for="surname">
                     Sobrenome:
-                    <input type="text" name="surname" size="25" required pattern="[a-z A-Z]+">
+                    <input type="text" name="surname" size="25" required pattern="[A-z À-ÿ]+">
                 </label>
 
                 <label class="textLabel" for="cpf">

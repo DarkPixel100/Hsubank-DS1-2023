@@ -39,9 +39,9 @@
                     <input type="radio" name="tipoTransferencia" value="credito" required onchange="credito(this);">
                     <div id="escolhaCredito" style="display: none; ">
                         <select name="qntVezes">
-                            <option value="1x">1x de R$0,00</option>
-                            <option value="2x">2x de R$0,00</option>
-                            <option value="3x">3x de R$0,00</option>
+                            <option value="1">1x de R$0,00</option>
+                            <option value="2">2x de R$0,00</option>
+                            <option value="3">3x de R$0,00</option>
                         </select>
                     </div>
                 </label>

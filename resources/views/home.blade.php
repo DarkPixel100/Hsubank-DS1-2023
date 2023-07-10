@@ -9,8 +9,8 @@
         <section>
             <h2 class="sectionTitle">Conta:</h2>
             <div class="accountInfo">Nº da Conta: {{ Auth::user()->contas->id }}</div>
-            <div class="accountInfo">Saldo:<br>R$ {{ Auth::user()->contas->saldo }}</div>
-            <div class="accountInfo">Limite:<br>R$ {{ Auth::user()->contas->limite }}</div>
+            <div class="accountInfo">Saldo:<br>R$ {{ number_format(Auth::user()->contas->saldo, 2) }}</div>
+            <div class="accountInfo">Limite:<br>R$ {{ number_format(Auth::user()->contas->limite, 2) }}</div>
         </section>
         <section>
             <h2 class="sectionTitle">Acesse:</h2>
