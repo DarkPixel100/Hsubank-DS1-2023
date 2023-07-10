@@ -204,5 +204,9 @@ td {
 }
 
 td * {
-    display: inline;
+    display: block;
+    max-width: 18em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

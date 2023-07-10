@@ -1,10 +1,10 @@
-Progresso do trabalho 70%
+Progresso do trabalho 100%
 
 HTML
 - Adicionar Paginas
 - Login
 - Forms
-- Transferência (WIP)
+- Transferência
 - Funcionalidade do Limite
 
 
@@ -13,14 +13,14 @@ CSS
 
 
 Programação
-- Pagamentos (WIP)
+- Pagamento
 - Extratos
-- Limite (WIP)
+- Limite
 - Rotas
-- Transferência (WIP)
+- Transferência
 
 
 ATUAL
-- TUT - Criando as rotas e paginas -> modChavePIX
-- DIEGO - Backend -> Login, auditoria e transferências
-- ENZO - Backend -> Transferências e pagamentos
+- TUT - 
+- DIEGO - 
+- ENZO - 

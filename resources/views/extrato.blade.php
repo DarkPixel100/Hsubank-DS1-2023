@@ -21,7 +21,7 @@
                     <tr>
                         <td>{{ date_format($extrato->time,"d/m/Y"); }}</td>
                         <td>{{ $extrato->tipo }}</td>
-                        <td>{{ $extrato->comentario }}</td>
+                        <td><div title="{{ $extrato->comentario }}">{{ $extrato->comentario }}</div></td>
                         <td>
                             @if ($extrato->destinoID == Auth::user()->contas->id)
                                 <span style="color: var(--positive)">+R$ {{ $extrato->valor }}</span>

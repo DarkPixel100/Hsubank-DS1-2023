@@ -9,7 +9,7 @@ class ChavePix extends Model
 {
     use HasFactory;
 
-    protected $table = 'chavesPix';
+    protected $table = 'chavespix';
 
     protected $fillable = [
         'contaID',
@@ -17,7 +17,8 @@ class ChavePix extends Model
     ];
 
     public $timestamps = false;
-    public function owner()
+
+    public function ownerAcc()
     {
         return $this->belongsTo(Conta::class, 'contaID', 'id');
     }
